@@ -6,22 +6,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'checkstyle'
 
-mainClassName = 'aup.cs.Exercise1'
-
-dependencies {
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-}
-
-test {
-  useJUnitPlatform()
-
-  testLogging {
-    events 'PASSED', 'FAILED', 'SKIPPED'
-    exceptionFormat = 'full'
-    showStandardStreams = true
-  }
-}
+mainClassName = 'aup.cs.shop.Shop'
 
 task pack(type: Zip) {
    from '.'
