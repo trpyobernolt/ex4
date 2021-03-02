@@ -41,7 +41,7 @@ Please complete the followings:
 * Add title,price and category data members. They should also be private. They should not have any getters or setters
 * Brushes should also have a material data member. Where should you add it? It should not have a getter and a setter. It should be private
 * Create constructors for all classes which initialize all data members properly. Brushes should have two constructors, one with material and the other without. Soaps should also have two constructors, since some soaps are out of stock and their price data member should be set to -1 by default. Make sure to reuse the code written in constructors, how can you do that?
-* Implement the init() method in the Shop class. It should initialize an array of products. Please take 2 products from each category and subcategory. You can use the following site.
+* Implement the init() method in the Shop class. It should initialize an array of products. Please take 2 products from each category and subcategory. You can use the [following site](https://theartofshaving.com/products/shaving-products).
 * Implement the createFeed() method in the Shop class. It should return a String containing the header of the feed a line for each product. The header is a tab delimited list of the attributes. Each product line is a tab delimited list of its properties. If a product does not have a value for the material attribute, it should be left blank. For example:
 
 
