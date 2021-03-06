@@ -1,34 +1,22 @@
 package aup.cs.shop;
 
-public class Brushes extends ShavingProduct {
-    private int id;
-    private String title;
-    private double price;
-    private String category = "Shave>Brushes";
+public final class Brushes extends ShavingProduct {
     private String material;
 
-    public Brushes(int idNum, String tit, double pri, String mat) {
-        // Initializes a Brush product with given material
-        this.id = idNum;
-        this.title = tit;
-        this.price = pri;
-        this.material = mat;
+    public Brushes(String tit, double pri, String material){
+        // initializes a brush object with a given material
+        super(tit, pri);
+        this.material = material;
     }
-    public Brushes(int idNum, String tit, double pri) {
-        // Initializes a Brush product with no given material
-        this(idNum, tit, pri, null);
+    public Brushes(String tit, double pri){
+        // initializes a brush object with no given material
+        this(tit, pri, null);
     }
 
-    @Override
-    public String toString() {
-        // Creates a string representation of the brush object
-        String idStr = String.valueOf(id);
-        String priceStr = String.valueOf(price);
-        if(material != null) {
-            return (idStr + "\t" + title + "\t" + priceStr + "\t" + category + "\t" + material);
-        }
-        else {
-            return (idStr + "\t" + title + "\t" + priceStr + "\t" + category);
-        }
+    public String toString(){
+        // creates a string representation of brush object
+        String stringForm = super.toString();
+        stringForm += ">Brushes \t" + material;
+        return stringForm;
     }
 }
