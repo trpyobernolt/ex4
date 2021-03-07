@@ -2,7 +2,7 @@ package aup.cs.shop;
 
 import java.util.ArrayList;
 
-public class CosmeticProducts extends Shop {
+public class CosmeticProducts extends Product {
     private long id;
     private String title;
     private double price;
@@ -11,11 +11,11 @@ public class CosmeticProducts extends Shop {
         totalIds++;
         this.id = totalIds;
         this.title = title;
+        this.price = price;
     }
 
     public String toString(){
-        String stringForm = id + "\t" + title + "\t" + price + "\t" + "Cosmetics";
-        return stringForm;
+        return (id + "\t" + title + "\t" + price + "\t" + "Cosmetics");
     }
 
     public static ArrayList<CosmeticProducts> getFeed() {

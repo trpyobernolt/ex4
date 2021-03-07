@@ -2,10 +2,10 @@ package aup.cs.shop;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Shop {
-  protected static long totalIds;
-  ProductList productList;
+  static ProductList productList;
 
 
   public static void main(String[] args) {
@@ -16,6 +16,18 @@ public class Shop {
     System.out.println("\n \n \n" + "MENS FEED:");
     System.out.println(shop.createMenFeed());
     System.out.println("\n \n \n" + "WOMEN'S FEED:");
+    System.out.println(shop.createWomenFeed());
+    Object toRemoveMen = productList.getProducts().get(3);
+    Object toRemoveWomen = productList.getProducts().get(11);
+    System.out.println("ID's that should be removed:");
+    System.out.println(toRemoveMen + "\t \t " + toRemoveWomen + "\n \n");
+    productList.removeById(toRemoveMen);
+    productList.removeById(toRemoveWomen);
+    System.out.println("Total Feed Revised:");
+    System.out.println(shop.createFeed());
+    System.out.println("\n \n \n" + "MENS FEED Revised:");
+    System.out.println(shop.createMenFeed());
+    System.out.println("\n \n \n" + "WOMEN'S FEED Revised:");
     System.out.println(shop.createWomenFeed());
   }
 

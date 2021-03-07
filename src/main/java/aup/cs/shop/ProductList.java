@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class ProductList extends Shop {
     private  ArrayList<Object> products = new ArrayList<>();
-    ArrayList<ShavingProduct> shavingProductsArray;
-    ArrayList<CosmeticProducts> cosmeticProductsArray;
+    private ArrayList<ShavingProduct> shavingProductsArray;
+    private ArrayList<CosmeticProducts> cosmeticProductsArray;
 
     public ProductList() {
         populateProducts();
@@ -16,6 +16,25 @@ public class ProductList extends Shop {
         cosmeticProductsArray = CosmeticProducts.getFeed();
         products.addAll(shavingProductsArray);
         products.addAll(cosmeticProductsArray);
+    }
+
+    public void removeById(Object o) {
+        // removes a product by their ID from all feeds
+        for (int i = 0; i < products.size(); i++) {
+            if (o.equals(products.get(i))) {
+                this.products.remove(i);
+            }
+        }
+        for (int i = 0; i < shavingProductsArray.size(); i++) {
+            if (o.equals(shavingProductsArray.get(i))) {
+                this.shavingProductsArray.remove(i);
+            }
+        }
+        for (int i = 0; i < cosmeticProductsArray.size(); i++) {
+            if (o.equals(cosmeticProductsArray.get(i))) {
+                this.cosmeticProductsArray.remove(i);
+            }
+        }
     }
 
     public String getFeed(){
@@ -48,4 +67,7 @@ public class ProductList extends Shop {
         return feed;
     }
 
+    public ArrayList<Object> getProducts() {
+        return products;
+    }
 }
