@@ -1,6 +1,6 @@
 package aup.cs.shop;
 
-public class Product {
+public class Product implements Comparable<Product>{
     protected static long totalIds;
 
     public boolean equals(Object o) {
@@ -17,5 +17,19 @@ public class Product {
         // Gets the ID for a certain product
         String[] str = this.toString().split("\t");
         return Integer.parseInt(str[0]);
+    }
+    public Double getPrice(){
+        String[] str = this.toString().split("\t");
+        return Double.parseDouble(str[2]);
+    }
+
+    public String getName(){
+        String[] str = this.toString().split("\t");
+        return str[1];
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return this.getName().compareTo(o.getName());
     }
 }

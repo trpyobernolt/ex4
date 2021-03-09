@@ -1,15 +1,18 @@
 package aup.cs.shop;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ProductList extends Shop {
-    private  ArrayList<Object> products = new ArrayList<>();
+    public  ArrayList<Product> products = new ArrayList<>();
     private ArrayList<ShavingProduct> shavingProductsArray;
     private ArrayList<CosmeticProducts> cosmeticProductsArray;
 
     public ProductList() {
         populateProducts();
     }
+
 
     private void populateProducts() {
         shavingProductsArray = ShavingProduct.getFeed();
@@ -67,7 +70,24 @@ public class ProductList extends Shop {
         return feed;
     }
 
-    public ArrayList<Object> getProducts() {
+    public ArrayList<Product> getProducts() {
         return products;
     }
+
+    public void sortByPriceLowtoHigh(){
+        products.sort(Comparator.comparingDouble(Product::getPrice));
+    }
+
+    public void sortByPriceHightoLow(){
+        products.sort(Comparator.comparingDouble(Product::getPrice).reversed());
+    }
+
+    public void sortAlphabetical(){
+        Collections.sort(products);
+    }
+
+    public void sortByID(){
+        products.sort(Comparator.comparingDouble(Product::getID));
+    }
+
 }

@@ -1,8 +1,6 @@
 package aup.cs.shop;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 public class Shop {
   static ProductList productList;
@@ -23,12 +21,24 @@ public class Shop {
     System.out.println(toRemoveMen + "\t \t " + toRemoveWomen + "\n \n");
     productList.removeById(toRemoveMen);
     productList.removeById(toRemoveWomen);
-    System.out.println("Total Feed Revised:");
+    System.out.println("Total Feed Revised After Removal:");
     System.out.println(shop.createFeed());
     System.out.println("\n \n \n" + "MENS FEED Revised:");
     System.out.println(shop.createMenFeed());
     System.out.println("\n \n \n" + "WOMEN'S FEED Revised:");
     System.out.println(shop.createWomenFeed());
+    System.out.println("Total Feed Sorted by Price (Lowest to Highest):");
+    productList.sortByPriceLowtoHigh();
+    System.out.println(shop.createFeed());
+    System.out.println("Total Feed Sorted by Price (Highest to Lowest):");
+    productList.sortByPriceHightoLow();
+    System.out.println(shop.createFeed());
+    System.out.println("Total Feed Alphabetically Sorted:");
+    productList.sortAlphabetical();
+    System.out.println(shop.createFeed());
+    System.out.println("Total Feed Sorted by ID:");
+    productList.sortByID();
+    System.out.println(shop.createFeed());
   }
 
   public Shop(){
