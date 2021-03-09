@@ -76,18 +76,26 @@ public class ProductList extends Shop {
 
     public void sortByPriceLowtoHigh(){
         products.sort(Comparator.comparingDouble(Product::getPrice));
+        shavingProductsArray.sort(Comparator.comparingDouble(Product::getPrice));
+        cosmeticProductsArray.sort(Comparator.comparingDouble(Product::getPrice));
     }
 
     public void sortByPriceHightoLow(){
         products.sort(Comparator.comparingDouble(Product::getPrice).reversed());
+        shavingProductsArray.sort(Comparator.comparingDouble(Product::getPrice).reversed());
+        cosmeticProductsArray.sort(Comparator.comparingDouble(Product::getPrice).reversed());
     }
 
     public void sortAlphabetical(){
         Collections.sort(products);
+        Collections.sort(shavingProductsArray);
+        Collections.sort(cosmeticProductsArray);
     }
 
     public void sortByID(){
         products.sort(Comparator.comparingDouble(Product::getID));
+        shavingProductsArray.sort(Comparator.comparingDouble(Product::getID));
+        cosmeticProductsArray.sort(Comparator.comparingDouble(Product::getID));
     }
 
 }

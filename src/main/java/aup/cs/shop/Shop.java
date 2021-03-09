@@ -23,22 +23,38 @@ public class Shop {
     productList.removeById(toRemoveWomen);
     System.out.println("Total Feed Revised After Removal:");
     System.out.println(shop.createFeed());
-    System.out.println("\n \n \n" + "MENS FEED Revised:");
+    System.out.println("\n" + "MENS FEED Revised After Removal:");
     System.out.println(shop.createMenFeed());
-    System.out.println("\n \n \n" + "WOMEN'S FEED Revised:");
+    System.out.println("\n" + "WOMEN'S FEED Revised After Removal:");
     System.out.println(shop.createWomenFeed());
-    System.out.println("Total Feed Sorted by Price (Lowest to Highest):");
+    System.out.println("\n \n \n" + "Total Feed Sorted by Price (Low to High):");
     productList.sortByPriceLowtoHigh();
     System.out.println(shop.createFeed());
-    System.out.println("Total Feed Sorted by Price (Highest to Lowest):");
+    System.out.println("\n" + "WOMEN'S FEED Sorted by Price(Low to High:");
+    System.out.println(shop.createWomenFeed());
+    System.out.println("\n" + "MEN'S FEED Sorted by Price(Low to High):");
+    System.out.println(shop.createMenFeed());
+    System.out.println("\n \n \n" + "Total Feed Sorted by Price (Highest to Lowest):");
     productList.sortByPriceHightoLow();
     System.out.println(shop.createFeed());
-    System.out.println("Total Feed Alphabetically Sorted:");
+    System.out.println("\n" + "WOMEN'S FEED Sorted by Price(High to Low):");
+    System.out.println(shop.createWomenFeed());
+    System.out.println("\n" + "MEN'S FEED Sorted by Price(High to Low):");
+    System.out.println(shop.createMenFeed());
+    System.out.println("\n \n \n" + "Total Feed Alphabetically Sorted:");
     productList.sortAlphabetical();
     System.out.println(shop.createFeed());
-    System.out.println("Total Feed Sorted by ID:");
+    System.out.println("\n" + "WOMEN'S FEED Alphabetically Sorted:");
+    System.out.println(shop.createWomenFeed());
+    System.out.println("\n" + "MEN'S FEED Alphabetically Sorted:");
+    System.out.println(shop.createMenFeed());
+    System.out.println("\n \n \n" + "Total Feed Sorted by ID:");
     productList.sortByID();
     System.out.println(shop.createFeed());
+    System.out.println("\n" + "WOMEN'S FEED Sorted by ID:");
+    System.out.println(shop.createWomenFeed());
+    System.out.println("\n" + "MEN'S FEED Sorted by ID:");
+    System.out.println(shop.createMenFeed());
   }
 
   public Shop(){

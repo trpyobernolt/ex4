@@ -2,7 +2,7 @@ package aup.cs.shop;
 
 import java.util.ArrayList;
 
-public class ShavingProduct extends Product{
+public class ShavingProduct extends Product {
     private long id;
     private String title;
     private double price;
